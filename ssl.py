@@ -19,6 +19,10 @@ class SList():
 
 
     def add_to_back(self, val):
+        if self.head == None:          # if the list is Empty
+            self.add_to_front(val)     # run the add_to_front Method
+            return self
+
         new_node = SLNode(val)
         runner = self.head             # set an iterator to start at the front of the list
         while(runner.next != None):
@@ -28,22 +32,30 @@ class SList():
         return self
 
 
-
-
-
-
-
     def print_values(self):
+        print ("______________START_____________")
+
         runner = self.head
         while (runner != None):
             print(runner.value)
             runner = runner.next 	# set the runner to its neighbor
+        print ("_______________END______________")
         return self	                # once the loop is done, return self to allow for chaining
 
 
-New_list = SList()
+Fst_list = SList()
+Fst_list.add_to_front("Mohannad").add_to_front("Yana").add_to_back("Aman").add_to_back("Nawwar")
+Fst_list.print_values()
 
-New_list.add_to_front("mohannad").add_to_front("aman").add_to_back("nawwar")
+# As a logic above > 
+# print this :
+# my name is Mohannad Saadeh
 
-New_list.print_values()
+Sec_list = SList() 
+Sec_list.add_to_front("Mohanad").add_to_front("is").add_to_front("My Name").add_to_front("Hi").add_to_back("Saadeh").print_values()
+
+
+
+
+
 
